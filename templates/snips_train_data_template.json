@@ -1,0 +1,17 @@
+{
+  "entities": {},
+  "intents": {
+    "set": {
+      "utterances": [
+        {
+          "data": [
+            {
+              "text": "example utterance"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "language": "en"
+}

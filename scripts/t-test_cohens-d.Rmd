@@ -1,0 +1,48 @@
+```{r}
+library(tidyverse)
+library(ggpubr)
+library(rstatix)
+```
+
+
+```{r}
+
+#data <- read.csv("C:\\Users\\User\\Desktop\\splits_results\\corr_model_level.csv", header=TRUE, stringsAsFactors=FALSE)
+#data <- read.csv("C:\\Users\\User\\Desktop\\splits_results\\acc_model_level.csv", header=TRUE, stringsAsFactors=FALSE)
+#data <- read.csv("C:\\Users\\User\\Desktop\\splits_results\\f1_model_level.csv", header=TRUE, stringsAsFactors=FALSE)
+
+#data <- read.csv("C:\\Users\\User\\Desktop\\splits_results\\corr_rank_1.csv", header=TRUE, stringsAsFactors=FALSE)
+#data <- read.csv("C:\\Users\\User\\Desktop\\splits_results\\corr_rank_2.csv", header=TRUE, stringsAsFactors=FALSE)
+#data <- read.csv("C:\\Users\\User\\Desktop\\splits_results\\corr_rank_3.csv", header=TRUE, stringsAsFactors=FALSE)
+data <- read.csv("C:\\Users\\User\\Desktop\\splits_results\\corr_rank_4-10.csv", header=TRUE, stringsAsFactors=FALSE)
+
+data
+```
+
+```{r}
+data.long <- data %>%
+  gather(key = "group", value = "corr", watson, luis, snips, rasa.sklearn, rasa.diet)
+
+watson = data$watson
+luis = data$luis
+snips = data$snips
+rasa.sklearn = data$rasa.sklearn
+rasa.diet = data$rasa.diet
+
+pairwise_calc = list(list(watson, luis), list(watson, snips), list(watson, rasa.sklearn), list(watson, rasa.diet), list(luis, snips), list(luis, rasa.sklearn), list(luis, rasa.diet), list(snips, rasa.sklearn), list(snips, rasa.diet), list(rasa.diet, rasa.sklearn))
+
+for (nlu_pair in pairwise_calc) {
+  
+  nlu1 = nlu_pair[[1]]
+  nlu2 = nlu_pair[[2]]
+
+  res <- t.test(nlu1, nlu2, paired = TRUE)
+  print(res)
+  
+}
+
+data.long  %>% cohens_d(corr ~ group, paired = TRUE)
+
+```
+
+

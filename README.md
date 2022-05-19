@@ -1,4 +1,4 @@
-# Confidence estiamtion benchmark for Natural Language Understanding (NLU)
+# [Explorations] Confidence estiamtion benchmark for Natural Language Understanding (NLU)
 
 This repository contains benchmarks that have been used to evaluate confidence estimation in NLU for dialogue systems. In detail, benchmarks are provided to measure the calibration and performance of NLUs on model and rank level.
 

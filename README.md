@@ -1,9 +1,9 @@
-# Confidence estiamtion benchmark for Natural Language Understanding (NLU)
+# Confidence estimation benchmark for Natural Language Understanding (NLU)
 
 This repository contains benchmarks that have been used to evaluate confidence estimation in NLU for dialogue systems. In detail, benchmarks are provided to measure the calibration and performance of NLUs on model and rank level.
 
 ## About
-The benchmark is a part of a case study for a Master's thesis in Language Technology (Spring 2022). The thesis is about "_Evaluating Confidence Estimation of NLUs for Dialogue Systems_". It is done by Ranim Khojah and supervised by Staffan Larsson and Alexander Berman.
+The benchmark is further described in R. Khojah, A. Berman and S. Larsson, "_Evaluating N-best Calibration of Natural Language Understanding for Dialogue Systems_" (Proceedings of SIGDIAL 2022, forthcoming) and Ranim Khojah, "_Evaluating Confidence Estimation of NLUs for Dialogue Systems_" (Master's thesis in Language Technology (Spring 2022), supervised by Staffan Larsson and Alexander Berman).
 
 ## Resources
 The evaluation involves 5 NLU Services, namely IBM's Watson Assistant, Language Understanding Intelligent Service (LUIS), Snips, Rasa (Sklearn Classifier) and Rasa (DIET Classifier). 
